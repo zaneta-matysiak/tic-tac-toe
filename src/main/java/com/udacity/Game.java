@@ -149,7 +149,15 @@ public class Game {
      * @return String indicating the outcome of the game: "X wins" or "O wins" or "Tie" or "None"
      */
     public String checkGameWinner(char [][]grid){
-        String result = "None";
+        String result = "Tie";
+
+        for (int i = 0; i < grid.length; i++){
+            for (int j = 0; j < grid.length; j++){
+                if (grid[i][j] == '-'){
+                    result = "None";
+                }
+            }
+        }
 
         //loop for check all columns
         for (int i = 0; i < grid.length; i++){
@@ -182,16 +190,6 @@ public class Game {
                 result = (grid[2][0]) + " wins!";
             }
         }
-
-//        for (int i = 0; i < grid.length; i++){
-//            for (int j = 0; j < grid.length; j++){
-//                if (grid[i][j] == '-'){
-//                    break;
-//                } else{
-//                    result = "Tie";
-//                }
-//            }
-//        }
 
         return result;
     }
