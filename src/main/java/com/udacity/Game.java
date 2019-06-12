@@ -161,34 +161,21 @@ public class Game {
 
         //loop for check all columns
         for (int i = 0; i < grid.length; i++){
-            if (grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2]) {
-                if (grid[i][0] == 'x' || grid[i][0] == 'o') {
-                    result = (grid[i][0]) + " wins";
-                }
+            if ((grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2]) && grid[i][0] != '-'){
+                result = (grid[i][0]) + " wins";
             }
         }
 
         //loop for check all rows
         for (int i = 0; i < grid.length; i++){
-            if (grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i]) {
-                if (grid[0][i] == 'x' || grid[0][i] == 'o') {
-                    result = (grid[0][i]) + " wins";
-                }
+            if ((grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i]) && grid[0][i] != '-') {
+                result = (grid[0][i]) + " wins";
             }
         }
 
-        //check first diagonal
-        if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]){
-            if (grid[0][0] == 'x' || grid[0][0] == 'o') {
-                result = (grid[0][0]) + " wins";
-            }
-        }
-
-        //check second diagonal
-        if (grid[2][0] == grid[1][1] && grid[1][1] == grid[0][2]){
-            if (grid[2][0] == 'x' || grid[2][0] == 'o') {
-                result = (grid[2][0]) + " wins";
-            }
+        //check both diagonals
+        if (((grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]) || (grid[2][0] == grid[1][1] && grid[1][1] == grid[0][2])) && grid[0][0] != '-'){
+            result = (grid[1][1]) + " wins";
         }
 
         return result;
