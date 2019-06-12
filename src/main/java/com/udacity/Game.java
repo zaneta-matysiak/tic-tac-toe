@@ -163,7 +163,7 @@ public class Game {
         for (int i = 0; i < grid.length; i++){
             if (grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2]) {
                 if (grid[i][0] == 'x' || grid[i][0] == 'o') {
-                    result = (grid[i][0]) + " wins!";
+                    result = (grid[i][0]) + " wins";
                 }
             }
         }
@@ -172,7 +172,7 @@ public class Game {
         for (int i = 0; i < grid.length; i++){
             if (grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i]) {
                 if (grid[0][i] == 'x' || grid[0][i] == 'o') {
-                    result = (grid[0][i]) + " wins!";
+                    result = (grid[0][i]) + " wins";
                 }
             }
         }
@@ -180,14 +180,14 @@ public class Game {
         //check first diagonal
         if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]){
             if (grid[0][0] == 'x' || grid[0][0] == 'o') {
-                result = (grid[0][0]) + " wins!";
+                result = (grid[0][0]) + " wins";
             }
         }
 
         //check second diagonal
         if (grid[2][0] == grid[1][1] && grid[1][1] == grid[0][2]){
             if (grid[2][0] == 'x' || grid[2][0] == 'o') {
-                result = (grid[2][0]) + " wins!";
+                result = (grid[2][0]) + " wins";
             }
         }
 
